@@ -19,7 +19,7 @@ defmodule Rocketpay.Account do
     struct
     |> cast(params, @required_params)
     |> validate_required(@required_params)
-    |> validate_number(:balance, greater_than_or_equal_to: 0)
+    # |> validate_number(:balance, greater_than_or_equal_to: 0)
     |> check_constraint(:balance, name: :balance_must_be_positive_or_zero)
   end
 end
